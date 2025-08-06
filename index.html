@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Computer Scientist & Researcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span>Your Name</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-target="home">Home</a>
+                <a href="#portfolio" class="nav-link" data-target="portfolio">Portfolio</a>
+                <a href="#blog" class="nav-link" data-target="blog">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1 class="hero-title">Computer Scientist & Researcher</h1>
+                <p class="hero-subtitle">Exploring the intersection of technology and innovation</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showSection('portfolio')">View Portfolio</button>
+                    <button class="btn-secondary" onclick="showSection('blog')">Read Blog</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="section-header">
+                <h1>Portfolio</h1>
+                <p>My journey in computer science and research</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Experience -->
+                <div class="portfolio-card">
+                    <h2>Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 - Present</div>
+                            <div class="timeline-content">
+                                <h3>Research Position</h3>
+                                <p>Institution/Company Name</p>
+                                <p>Brief description of your role and achievements.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021 - 2023</div>
+                            <div class="timeline-content">
+                                <h3>Previous Role</h3>
+                                <p>Institution/Company Name</p>
+                                <p>Brief description of your role and achievements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="portfolio-card">
+                    <h2>Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - 2024</div>
+                            <div class="timeline-content">
+                                <h3>PhD in Computer Science</h3>
+                                <p>University Name</p>
+                                <p>Thesis: "Your Research Topic"</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2018 - 2020</div>
+                            <div class="timeline-content">
+                                <h3>Master's Degree</h3>
+                                <p>University Name</p>
+                                <p>Specialization in your field</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="portfolio-card full-width">
+                    <h2>Featured Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <h3>Project Name 1</h3>
+                            <p>Brief description of the project and technologies used.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Research</span>
+                            </div>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                        <div class="project-item">
+                            <h3>Project Name 2</h3>
+                            <p>Brief description of the project and technologies used.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Web Development</span>
+                                <span class="tag">Open Source</span>
+                            </div>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                        <div class="project-item">
+                            <h3>Project Name 3</h3>
+                            <p>Brief description of the project and technologies used.</p>
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Performance</span>
+                            </div>
+                            <a href="#" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="section-header">
+                <h1>Blog</h1>
+                <p>Thoughts on technology, research, and innovation</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 15, 2024</span>
+                        <span class="blog-category">Research</span>
+                    </div>
+                    <h2>Your First Blog Post Title</h2>
+                    <p>A compelling excerpt from your blog post that gives readers a preview of what they can expect to learn...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-meta">
+                        <span class="blog-date">December 28, 2023</span>
+                        <span class="blog-category">Technology</span>
+                    </div>
+                    <h2>Another Interesting Topic</h2>
+                    <p>Another engaging excerpt that demonstrates your expertise and insights in your field of study...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="blog-meta">
+                        <span class="blog-date">December 10, 2023</span>
+                        <span class="blog-category">Tutorial</span>
+                    </div>
+                    <h2>How-to Guide or Tutorial</h2>
+                    <p>A preview of a technical tutorial or guide you've written to share knowledge with the community...</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">GitHub</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="Email">Email</a>
+            </div>
+            <p>&copy; 2025 Arthur "reg1um" HAMARD. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
