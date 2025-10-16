@@ -3,421 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reg1um@portfolio:~$ - Arthur HAMARD</title>
+    <meta name="description" content="Arthur Hamard - Computer Science & AI/ML Engineer">
+    <meta name="author" content="Arthur Hamard">
+    <title>Arthur Hamard | Computer Scientist</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    
-    <!-- Terminal Container -->
-    <div class="terminal-container">
-        <!-- Terminal Header -->
-        <div class="terminal-header">
-            <div class="terminal-controls">
-                <div class="terminal-dot"></div>
-                <div class="terminal-dot"></div>
-                <div class="terminal-dot"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">AH</a>
             </div>
-            <div class="terminal-title">reg1um@portfolio:~$</div>
-            <div class="terminal-info">
-                <span id="current-time"></span>
-            </div>
-        </div>
-
-        <!-- Help Panel -->
-        <div class="help-panel" id="helpPanel">
-            <h3>⌨️ Keyboard Controls</h3>
-            <div class="help-item">
-                <span class="help-key">?</span>
-                <span class="help-desc">Toggle help</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">:</span>
-                <span class="help-desc">Command mode</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">j/k</span>
-                <span class="help-desc">Navigate down/up</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">h/l</span>
-                <span class="help-desc">Navigate left/right</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">Enter</span>
-                <span class="help-desc">Select item</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">Esc</span>
-                <span class="help-desc">Go back</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">g+g</span>
-                <span class="help-desc">Go to top</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">G</span>
-                <span class="help-desc">Go to bottom</span>
-            </div>
-            <div class="help-item">
-                <span class="help-key">1-5</span>
-                <span class="help-desc">Quick section jump</span>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Navigation Menu -->
-            <div class="content-section active" id="nav-menu">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">portfolio</span>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">
+                    Arthur Hamard
+                </h1>
+                <p class="hero-subtitle fade-in-delay-1">
+                    Computer Science & AI/ML Engineer
+                </p>
+                <p class="hero-description fade-in-delay-2">
+                    Specializing in Natural Language Processing, Deep Learning, and High-Performance Systems
+                </p>
+                <div class="hero-links fade-in-delay-3">
+                    <a href="https://github.com/reg1um" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/arthur-hamard" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:arthurhm@outlook.fr" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
-                
-                <div class="nav-menu">
-                    <div class="nav-item active" data-section="about" data-key="1">
-                        <div class="nav-item-header">
-                            <div class="nav-item-title">about.md</div>
-                            <div class="nav-item-key">1</div>
-                        </div>
-                        <div class="nav-item-desc">Education, skills, and professional background</div>
-                    </div>
-                    
-                    <div class="nav-item" data-section="experience" data-key="2">
-                        <div class="nav-item-header">
-                            <div class="nav-item-title">experience/</div>
-                            <div class="nav-item-key">2</div>
-                        </div>
-                        <div class="nav-item-desc">Professional experience and internships</div>
-                    </div>
-                    
-                    <div class="nav-item" data-section="projects" data-key="3">
-                        <div class="nav-item-header">
-                            <div class="nav-item-title">projects/</div>
-                            <div class="nav-item-key">3</div>
-                        </div>
-                        <div class="nav-item-desc">Technical projects and research work</div>
-                    </div>
-                    
-                    <div class="nav-item" data-section="posts" data-key="4">
-                        <div class="nav-item-header">
-                            <div class="nav-item-title">posts/</div>
-                            <div class="nav-item-key">4</div>
-                        </div>
-                        <div class="nav-item-desc">Technical blog posts and articles</div>
-                    </div>
-                    
-                    <div class="nav-item" data-section="contact" data-key="5">
-                        <div class="nav-item-header">
-                            <div class="nav-item-title">contact.sh</div>
-                            <div class="nav-item-key">5</div>
-                        </div>
-                        <div class="nav-item-desc">Get in touch via various platforms</div>
-                    </div>
+                <div class="hero-cta fade-in-delay-4">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
                 </div>
-            </div>
-
-            <!-- About Section -->
-            <div class="content-section" id="about-section">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>portfolio</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">about.md</span>
-                </div>
-                
-                <div class="section-header">
-                    <div class="section-icon">👤</div>
-                    <div class="section-title">About</div>
-                    <div class="section-path">~/portfolio/about.md</div>
-                </div>
-                
-                <div class="content-grid">
-                    <div class="content-item focused">
-                        <div class="item-header">
-                            <div class="item-index">#</div>
-                            <div class="item-title">Arthur "reg1um" HAMARD</div>
-                        </div>
-                        <div class="item-meta">Computer Scientist & AI/ML Specialist</div>
-                        <div class="item-description">
-                            Master's student specializing in Natural Language Processing and Machine Learning at EPITA Paris. 
-                            Passionate about AI/ML optimization, network simulation, and building efficient systems. Open to U.S. internships and eligible for J-1 visa sponsorship.
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🎓</div>
-                            <div class="item-title">Master of Computer Science & IA/ML</div>
-                        </div>
-                        <div class="item-meta">Expected 2026 | EPITA - Paris, France</div>
-                        <div class="item-description">
-                            Specialization in Natural Language Processing (NLP), GPA of 4.0/4.0<br><br>
-                            <strong>Key Coursework:</strong> Machine Learning, Deep Learning, Reinforcement Learning, Recommender Systems, Azure, Generative AI, NLP, Big Data, MLOps, Linear Algebra, Optimization, Probabilistic, Statistics, Algorithms and Data Structures
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🌏</div>
-                            <div class="item-title">Exchange Semester</div>
-                        </div>
-                        <div class="item-meta">2023 | Kyungpook National University - Daegu, South Korea</div>
-                        <div class="item-description">
-                            <strong>Key Coursework:</strong> Computer Network, Software Engineering, Differential Equations
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🎸</div>
-                            <div class="item-title">Leadership</div>
-                        </div>
-                        <div class="item-meta">Community Management</div>
-                        <div class="item-description">
-                            Founded and led a 25,000+ member global bass guitar community; analyzed user engagement patterns and organized events with 1,000+ participants and managed a 30-person global moderation team to maintain community engagement and growth.
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🛠️</div>
-                            <div class="item-title">Technical Skills</div>
-                        </div>
-                        <div class="item-meta">ML/DS & Development Tools</div>
-                        <div class="item-description">
-                            <strong>ML/DS:</strong> PyTorch, TensorFlow, CUDA, Scikit-learn, Pandas, Numpy, Azure ML, Azure Vision<br>
-                            <strong>Languages:</strong> Python, C, C++, SQL, Java, C#, Shell, Scala, Javascript, React, NetLogo, Network Protocols (TCP/IP...)<br>
-                            <strong>Tools:</strong> Git, Linux, Docker, Kubernetes, Spark, Kafka, CI/CD, ROS2
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Experience Section -->
-            <div class="content-section" id="experience-section">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>portfolio</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">experience/</span>
-                </div>
-                
-                <div class="section-header">
-                    <div class="section-icon">💼</div>
-                    <div class="section-title">Experience</div>
-                    <div class="section-path">~/portfolio/experience/</div>
-                </div>
-                
-                <div class="content-grid">
-                    <div class="content-item focused">
-                        <div class="item-header">
-                            <div class="item-index">01</div>
-                            <div class="item-title">Software Engineer (School Program)</div>
-                        </div>
-                        <div class="item-meta">Jun 2025 - Jan 2026 | Safran - Paris, France</div>
-                        <div class="item-description">
-                            • Selected to work with Safran's PLAID team alongside my lectures as part of a program with my school.<br>
-                            • Worked on PLAID, an open-source data model library for AI/ML in physic simulations.<br>
-                            • Strengthened robustness, testing, integrated sklearn-style pipelines and enhanced AI/ML framework compatibility.
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">02</div>
-                            <div class="item-title">Software Engineer Intern</div>
-                        </div>
-                        <div class="item-meta">Sep 2024 - Feb 2025 | Arista Networks - Dublin, Ireland</div>
-                        <div class="item-description">
-                            • Developed a high-performance Datacenter Network Simulator tailored for AI training.<br>
-                            • Engineered core modules in C++ for network simulation, implementing network protocols and improving scalability.<br>
-                            • Optimized memory usage by 80%, through targeted C++ optimizations, improving simulation efficiency.<br>
-                            • Delivered a tool now actively used by Network Engineers for testing at Arista.<br>
-                            • Simulated large-scale AI workloads with low-latencies, 10,000+ GPUs and 400/800 Gbps Ethernet topologies.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projects Section -->
-            <div class="content-section" id="projects-section">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>portfolio</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">projects/</span>
-                </div>
-                
-                <div class="section-header">
-                    <div class="section-icon">🚀</div>
-                    <div class="section-title">Projects</div>
-                    <div class="section-path">~/portfolio/projects/</div>
-                </div>
-                
-                <div class="content-grid">
-                    <div class="content-item focused">
-                        <div class="item-header">
-                            <div class="item-index">01</div>
-                            <div class="item-title">AI Bias & Fallacy Detection Agent - Optimization</div>
-                        </div>
-                        <div class="item-meta">PyTorch, Transformer, NLP, AI/ML Optimization</div>
-                        <div class="item-description">
-                            Fine-tuned a Transformer-based NLP agent to detect logical fallacies and cognitive biases in natural language text, achieving 79% accuracy on a curated evaluation dataset. Optimized the model for low-latency inference achieving a 75x speedup (20 ms per sample vs 1.5 s for a comparable LLM) to enable local execution and efficient batch processing without cloud dependencies.
-                        </div>
-                        <div class="item-links">
-                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">02</div>
-                            <div class="item-title">Kolmogorov-Arnold Networks Implementation</div>
-                        </div>
-                        <div class="item-meta">PyTorch, Deep Learning, B-splines, Neural Architecture</div>
-                        <div class="item-description">
-                            Developed a fully functional Kolmogorov-Arnold Network in PyTorch, designing a custom B-spline layer from first principles to parameterize edge-based activation functions, achieving a more expressive alternative to standard MLP architectures. Implemented the paper's core innovation of dynamic grid extension, enabling the network to adaptively refine B-spline resolution during training to improve accuracy and allow for direct model interpretability.
-                        </div>
-                        <div class="item-links">
-                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">03</div>
-                            <div class="item-title">AI-Maestro</div>
-                        </div>
-                        <div class="item-meta">Python, PyTorch, Audio Processing, VAE, MusicGen</div>
-                        <div class="item-description">
-                            Developed end-to-end Python/PyTorch system analyzing and fusing musical tracks through audio feature extraction, optimal transition strategies, and seamless bridge generation using heuristic, VAE-based latent interpolation, and MusicGen neural synthesis using Prompt Engineering. Built complete pipeline from audio feature extraction to mastering with CLI/web interfaces for deployment.
-                        </div>
-                        <div class="item-links">
-                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posts Section -->
-            <div class="content-section" id="posts-section">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>portfolio</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">posts/</span>
-                </div>
-                
-                <div class="section-header">
-                    <div class="section-icon">📝</div>
-                    <div class="section-title">Blog Posts</div>
-                    <div class="section-path">~/portfolio/posts/</div>
-                </div>
-                
-                <div class="content-grid" id="blog-container">
-                    <!-- Blog posts will be loaded dynamically -->
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="content-section" id="contact-section">
-                <div class="breadcrumb">
-                    <span>~</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>portfolio</span>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">contact.sh</span>
-                </div>
-                
-                <div class="section-header">
-                    <div class="section-icon">📧</div>
-                    <div class="section-title">Contact</div>
-                    <div class="section-path">~/portfolio/contact.sh</div>
-                </div>
-                
-                <div class="content-grid">
-                    <div class="content-item focused">
-                        <div class="item-header">
-                            <div class="item-index">📧</div>
-                            <div class="item-title">Email</div>
-                        </div>
-                        <div class="item-description">arthurhm@outlook.fr</div>
-                        <div class="item-links">
-                            <a href="mailto:arthurhm@outlook.fr" class="item-link">Send Email</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🐙</div>
-                            <div class="item-title">GitHub</div>
-                        </div>
-                        <div class="item-description">github.com/reg1um</div>
-                        <div class="item-links">
-                            <a href="https://github.com/reg1um" class="item-link" target="_blank">View Profile</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">💼</div>
-                            <div class="item-title">LinkedIn</div>
-                        </div>
-                        <div class="item-description">linkedin.com/in/arthur-hamard</div>
-                        <div class="item-links">
-                            <a href="https://linkedin.com/in/arthur-hamard" class="item-link" target="_blank">Connect</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">📱</div>
-                            <div class="item-title">Phone</div>
-                        </div>
-                        <div class="item-description">+33 6 31 70 90 58</div>
-                        <div class="item-links">
-                            <a href="tel:+33631709058" class="item-link">Call</a>
-                        </div>
-                    </div>
-                    
-                    <div class="content-item">
-                        <div class="item-header">
-                            <div class="item-index">🌍</div>
-                            <div class="item-title">Status</div>
-                        </div>
-                        <div class="item-description">Open to relocate to U.S Internships • Eligible for J-1 visa sponsorship</div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <div class="status-left">
-                <div class="status-item">Mode: <span id="current-mode">NORMAL</span></div>
-                <div class="status-item">Section: <span id="current-section">portfolio</span></div>
-                <div class="status-item">Items: <span id="item-count">5</span></div>
-            </div>
-            <div class="status-right">
-                <div class="status-item">Press <span>?</span> for help</div>
             </div>
         </div>
-
-        <!-- Command Line -->
-        <div class="command-line">
-            <span class="prompt">reg1um@portfolio:~$</span>
-            <input type="text" class="command-input" id="commandInput" placeholder="Type commands here... (:help for help)">
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Master's student at EPITA - Paris, specializing in AI/ML and Natural Language Processing with a GPA of 4.0/4.0.
+                    </p>
+                    <p>
+                        Currently working as a Software Engineer at Safran's PLAID team, developing open-source data model libraries for AI/ML in physic simulations. Previously, I engineered a high-performance Datacenter Network Simulator at Arista Networks, optimizing C++ code to improve efficiency by 80%.
+                    </p>
+                    <p>
+                        I'm passionate about building efficient, scalable systems and applying cutting-edge machine learning techniques to solve real-world problems. Open to relocation for U.S. internships and eligible for J-1 visa sponsorship.
+                    </p>
+                    
+                    <div class="education">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4>Master of Computer Science & IA/ML</h4>
+                                <span class="year">Expected 2026</span>
+                            </div>
+                            <p class="institution">EPITA - Paris, France</p>
+                            <p class="detail">Specialization in NLP • GPA 4.0/4.0</p>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4>Exchange Semester</h4>
+                                <span class="year">2023</span>
+                            </div>
+                            <p class="institution">Kyungpook National University - Daegu, South Korea</p>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h3>Experience</h3>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h4>Software Engineer (School Program)</h4>
+                                <span class="period">Jun 2025 - Jan 2026</span>
+                            </div>
+                            <p class="company">Safran | Paris, France</p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <h4>Software Engineer Intern</h4>
+                                <span class="period">Sep 2024 - Feb 2025</span>
+                            </div>
+                            <p class="company">Arista Networks | Dublin, Ireland</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-section">
+                    <h3>Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-brain"></i> ML/DS</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">CUDA</span>
+                                <span class="skill-tag">Scikit-learn</span>
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">NumPy</span>
+                                <span class="skill-tag">Azure ML</span>
+                                <span class="skill-tag">Azure Vision</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4><i class="fas fa-code"></i> Languages</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Scala</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4><i class="fas fa-tools"></i> Tools</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                                <span class="skill-tag">Spark</span>
+                                <span class="skill-tag">Kafka</span>
+                                <span class="skill-tag">CI/CD</span>
+                                <span class="skill-tag">ROS2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>AI Bias & Fallacy Detection Agent</h3>
+                            <span class="project-tag">Optimization</span>
+                        </div>
+                        <p class="project-description">
+                            Fine-tuned a Transformer-based NLP agent to detect logical fallacies and cognitive biases in natural language text, achieving 79% accuracy on a curated evaluation dataset. Optimized for low-latency inference with 75x speedup (20ms per sample vs 1.5s for comparable LLM).
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Optimization</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Kolmogorov-Arnold Networks Implementation</h3>
+                            <span class="project-tag">Research</span>
+                        </div>
+                        <p class="project-description">
+                            Developed a fully functional Kolmogorov-Arnold Network in PyTorch, designing a custom B-spline layer from first principles to parameterize edge-based activation functions. Implemented dynamic grid extension for adaptive B-spline resolution during training.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Neural Networks</span>
+                            <span class="tech-tag">Research</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>AI-Maestro</h3>
+                            <span class="project-tag">Full-Stack</span>
+                        </div>
+                        <p class="project-description">
+                            Developed an end-to-end Python/PyTorch system for analyzing and fusing musical tracks through audio feature extraction, optimal transition strategies, and seamless bridge generation using heuristic, VAE-based latent interpolation, and MusicGen neural synthesis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">VAE</span>
+                            <span class="tech-tag">Audio Processing</span>
+                            <span class="tech-tag">CLI/Web</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Datacenter Network Simulator</h3>
+                            <span class="project-tag">Performance</span>
+                        </div>
+                        <p class="project-description">
+                            Built a high-performance network simulator in C++ tailored for AI training workloads. Optimized memory usage by 80% through targeted C++ optimizations, simulated large-scale AI workloads with low-latencies, 10,000+ GPUs and 400/800 Gbps Ethernet topologies.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Network Protocols</span>
+                            <span class="tech-tag">Performance</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Thoughts on AI, systems, and software engineering</p>
+            
+            <div class="blog-grid">
+                
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="blog-category">Deep Learning</span>
+                        </div>
+                        <h3>Understanding Kolmogorov-Arnold Networks</h3>
+                        <p>A deep dive into the mathematical foundations and practical implementation of KANs, exploring how they differ from traditional MLPs.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="blog-category">Performance</span>
+                        </div>
+                        <h3>Optimizing C++ for Large-Scale Simulations</h3>
+                        <p>Lessons learned from optimizing memory usage by 80% in a datacenter network simulator for AI workloads.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">Coming Soon</span>
+                            <span class="blog-category">NLP</span>
+                        </div>
+                        <h3>Detecting Bias in Language Models</h3>
+                        <p>Exploring techniques for identifying and mitigating cognitive biases and logical fallacies in natural language text.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="blog-cta">
+                <p>More articles coming soon. Stay tuned!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Arthur Hamard</h3>
+                    <p>Computer Science & AI/ML Engineer</p>
+                    <p class="footer-location">
+                        <i class="fas fa-map-marker-alt"></i> Paris, France | Open to U.S. Opportunities
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/reg1um" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/arthur-hamard" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:arthurhm@outlook.fr">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arthur Hamard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-    <script src="blog.js"></script>
 </body>
 </html>
