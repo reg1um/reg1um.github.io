@@ -32,7 +32,7 @@ class BlogManager {
     }
 
     async loadBlogPosts() {
-        const blogGrid = document.querySelector('.blog-grid');
+        const blogGrid = document.getElementById('blog-container');
         if (!blogGrid) return;
 
         // Clear existing content
@@ -146,7 +146,7 @@ class BlogManager {
     }
 
     displayFullPost(metadata, content) {
-        const blogSection = document.getElementById('blog');
+        const blogSection = document.getElementById('posts-section');
         const originalContent = blogSection.innerHTML;
         
         blogSection.innerHTML = `
@@ -175,7 +175,7 @@ class BlogManager {
     }
 
     returnToBlogList() {
-        const blogSection = document.getElementById('blog');
+        const blogSection = document.getElementById('posts-section');
         blogSection.innerHTML = this.originalBlogContent;
         this.loadBlogPosts(); // Reload blog posts
     }

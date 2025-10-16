@@ -3,88 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reg1um - Arthur HAMARD</title>
+    <title>reg1um@portfolio:~$ - Arthur HAMARD</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1><a href="#home">reg1um</a></h1>
-        <nav>
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#posts">posts</a>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="active">
-            <p class="intro">Arthur "reg1um" HAMARD | Computer Scientist & Researcher</p>
-            <p class="tagline">Building efficient systems and exploring the intersection of technology and innovation.</p>
-        </section>
-
-        <section id="about">
-            <h2>about</h2>
-            <div class="item-list">
-                <div class="item">
-                    <span class="label">current:</span>
-                    <span class="value">Research Position at Institution/Company Name (2023-present)</span>
-                </div>
-                <div class="item">
-                    <span class="label">education:</span>
-                    <span class="value">PhD Computer Science, University Name (2020-2024)</span>
-                </div>
-                <div class="item">
-                    <span class="label">previous:</span>
-                    <span class="value">Previous Role at Institution/Company Name (2021-2023)</span>
-                </div>
-                <div class="item">
-                    <span class="label">contact:</span>
-                    <span class="value">
-                        <a href="#">github</a> | 
-                        <a href="#">linkedin</a> | 
-                        <a href="#">email</a>
-                    </span>
-                </div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Terminal Container -->
+    <div class="terminal-container">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
             </div>
-        </section>
+            <div class="terminal-title">reg1um@portfolio:~$</div>
+            <div class="terminal-info">
+                <span id="current-time"></span>
+            </div>
+        </div>
 
-        <section id="projects">
-            <h2>projects</h2>
-            <div class="item-list">
-                <div class="item">
-                    <span class="rank">1.</span>
-                    <div class="content">
-                        <a href="#" class="title">Project Name 1</a>
-                        <span class="meta">Python, Machine Learning, Research</span>
-                        <p class="desc">Brief description of the project and technologies used.</p>
+        <!-- Help Panel -->
+        <div class="help-panel" id="helpPanel">
+            <h3>⌨️ Keyboard Controls</h3>
+            <div class="help-item">
+                <span class="help-key">?</span>
+                <span class="help-desc">Toggle help</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">:</span>
+                <span class="help-desc">Command mode</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">j/k</span>
+                <span class="help-desc">Navigate down/up</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">h/l</span>
+                <span class="help-desc">Navigate left/right</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">Enter</span>
+                <span class="help-desc">Select item</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">Esc</span>
+                <span class="help-desc">Go back</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">g+g</span>
+                <span class="help-desc">Go to top</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">G</span>
+                <span class="help-desc">Go to bottom</span>
+            </div>
+            <div class="help-item">
+                <span class="help-key">1-5</span>
+                <span class="help-desc">Quick section jump</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Navigation Menu -->
+            <div class="content-section active" id="nav-menu">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">portfolio</span>
+                </div>
+                
+                <div class="nav-menu">
+                    <div class="nav-item active" data-section="about" data-key="1">
+                        <div class="nav-item-header">
+                            <div class="nav-item-title">about.md</div>
+                            <div class="nav-item-key">1</div>
+                        </div>
+                        <div class="nav-item-desc">Education, skills, and professional background</div>
+                    </div>
+                    
+                    <div class="nav-item" data-section="experience" data-key="2">
+                        <div class="nav-item-header">
+                            <div class="nav-item-title">experience/</div>
+                            <div class="nav-item-key">2</div>
+                        </div>
+                        <div class="nav-item-desc">Professional experience and internships</div>
+                    </div>
+                    
+                    <div class="nav-item" data-section="projects" data-key="3">
+                        <div class="nav-item-header">
+                            <div class="nav-item-title">projects/</div>
+                            <div class="nav-item-key">3</div>
+                        </div>
+                        <div class="nav-item-desc">Technical projects and research work</div>
+                    </div>
+                    
+                    <div class="nav-item" data-section="posts" data-key="4">
+                        <div class="nav-item-header">
+                            <div class="nav-item-title">posts/</div>
+                            <div class="nav-item-key">4</div>
+                        </div>
+                        <div class="nav-item-desc">Technical blog posts and articles</div>
+                    </div>
+                    
+                    <div class="nav-item" data-section="contact" data-key="5">
+                        <div class="nav-item-header">
+                            <div class="nav-item-title">contact.sh</div>
+                            <div class="nav-item-key">5</div>
+                        </div>
+                        <div class="nav-item-desc">Get in touch via various platforms</div>
                     </div>
                 </div>
-                <div class="item">
-                    <span class="rank">2.</span>
-                    <div class="content">
-                        <a href="#" class="title">Project Name 2</a>
-                        <span class="meta">JavaScript, Web Development, Open Source</span>
-                        <p class="desc">Brief description of the project and technologies used.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <span class="rank">3.</span>
-                    <div class="content">
-                        <a href="#" class="title">Project Name 3</a>
-                        <span class="meta">C++, Algorithms, Performance</span>
-                        <p class="desc">Brief description of the project and technologies used.</p>
-                    </div>
-                </div>
             </div>
-        </section>
 
-        <section id="posts">
-            <h2>posts</h2>
-            <div class="blog-container">
-                <!-- Blog posts will be loaded dynamically -->
+            <!-- About Section -->
+            <div class="content-section" id="about-section">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>portfolio</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">about.md</span>
+                </div>
+                
+                <div class="section-header">
+                    <div class="section-icon">👤</div>
+                    <div class="section-title">About</div>
+                    <div class="section-path">~/portfolio/about.md</div>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-item focused">
+                        <div class="item-header">
+                            <div class="item-index">#</div>
+                            <div class="item-title">Arthur "reg1um" HAMARD</div>
+                        </div>
+                        <div class="item-meta">Computer Scientist & AI/ML Specialist</div>
+                        <div class="item-description">
+                            Master's student specializing in Natural Language Processing and Machine Learning at EPITA Paris. 
+                            Passionate about AI/ML optimization, network simulation, and building efficient systems. Open to U.S. internships and eligible for J-1 visa sponsorship.
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🎓</div>
+                            <div class="item-title">Master of Computer Science & IA/ML</div>
+                        </div>
+                        <div class="item-meta">Expected 2026 | EPITA - Paris, France</div>
+                        <div class="item-description">
+                            Specialization in Natural Language Processing (NLP), GPA of 4.0/4.0<br><br>
+                            <strong>Key Coursework:</strong> Machine Learning, Deep Learning, Reinforcement Learning, Recommender Systems, Azure, Generative AI, NLP, Big Data, MLOps, Linear Algebra, Optimization, Probabilistic, Statistics, Algorithms and Data Structures
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🌏</div>
+                            <div class="item-title">Exchange Semester</div>
+                        </div>
+                        <div class="item-meta">2023 | Kyungpook National University - Daegu, South Korea</div>
+                        <div class="item-description">
+                            <strong>Key Coursework:</strong> Computer Network, Software Engineering, Differential Equations
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🎸</div>
+                            <div class="item-title">Leadership</div>
+                        </div>
+                        <div class="item-meta">Community Management</div>
+                        <div class="item-description">
+                            Founded and led a 25,000+ member global bass guitar community; analyzed user engagement patterns and organized events with 1,000+ participants and managed a 30-person global moderation team to maintain community engagement and growth.
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🛠️</div>
+                            <div class="item-title">Technical Skills</div>
+                        </div>
+                        <div class="item-meta">ML/DS & Development Tools</div>
+                        <div class="item-description">
+                            <strong>ML/DS:</strong> PyTorch, TensorFlow, CUDA, Scikit-learn, Pandas, Numpy, Azure ML, Azure Vision<br>
+                            <strong>Languages:</strong> Python, C, C++, SQL, Java, C#, Shell, Scala, Javascript, React, NetLogo, Network Protocols (TCP/IP...)<br>
+                            <strong>Tools:</strong> Git, Linux, Docker, Kubernetes, Spark, Kafka, CI/CD, ROS2
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <!-- Experience Section -->
+            <div class="content-section" id="experience-section">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>portfolio</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">experience/</span>
+                </div>
+                
+                <div class="section-header">
+                    <div class="section-icon">💼</div>
+                    <div class="section-title">Experience</div>
+                    <div class="section-path">~/portfolio/experience/</div>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-item focused">
+                        <div class="item-header">
+                            <div class="item-index">01</div>
+                            <div class="item-title">Software Engineer (School Program)</div>
+                        </div>
+                        <div class="item-meta">Jun 2025 - Jan 2026 | Safran - Paris, France</div>
+                        <div class="item-description">
+                            • Selected to work with Safran's PLAID team alongside my lectures as part of a program with my school.<br>
+                            • Worked on PLAID, an open-source data model library for AI/ML in physic simulations.<br>
+                            • Strengthened robustness, testing, integrated sklearn-style pipelines and enhanced AI/ML framework compatibility.
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">02</div>
+                            <div class="item-title">Software Engineer Intern</div>
+                        </div>
+                        <div class="item-meta">Sep 2024 - Feb 2025 | Arista Networks - Dublin, Ireland</div>
+                        <div class="item-description">
+                            • Developed a high-performance Datacenter Network Simulator tailored for AI training.<br>
+                            • Engineered core modules in C++ for network simulation, implementing network protocols and improving scalability.<br>
+                            • Optimized memory usage by 80%, through targeted C++ optimizations, improving simulation efficiency.<br>
+                            • Delivered a tool now actively used by Network Engineers for testing at Arista.<br>
+                            • Simulated large-scale AI workloads with low-latencies, 10,000+ GPUs and 400/800 Gbps Ethernet topologies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="content-section" id="projects-section">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>portfolio</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">projects/</span>
+                </div>
+                
+                <div class="section-header">
+                    <div class="section-icon">🚀</div>
+                    <div class="section-title">Projects</div>
+                    <div class="section-path">~/portfolio/projects/</div>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-item focused">
+                        <div class="item-header">
+                            <div class="item-index">01</div>
+                            <div class="item-title">AI Bias & Fallacy Detection Agent - Optimization</div>
+                        </div>
+                        <div class="item-meta">PyTorch, Transformer, NLP, AI/ML Optimization</div>
+                        <div class="item-description">
+                            Fine-tuned a Transformer-based NLP agent to detect logical fallacies and cognitive biases in natural language text, achieving 79% accuracy on a curated evaluation dataset. Optimized the model for low-latency inference achieving a 75x speedup (20 ms per sample vs 1.5 s for a comparable LLM) to enable local execution and efficient batch processing without cloud dependencies.
+                        </div>
+                        <div class="item-links">
+                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">02</div>
+                            <div class="item-title">Kolmogorov-Arnold Networks Implementation</div>
+                        </div>
+                        <div class="item-meta">PyTorch, Deep Learning, B-splines, Neural Architecture</div>
+                        <div class="item-description">
+                            Developed a fully functional Kolmogorov-Arnold Network in PyTorch, designing a custom B-spline layer from first principles to parameterize edge-based activation functions, achieving a more expressive alternative to standard MLP architectures. Implemented the paper's core innovation of dynamic grid extension, enabling the network to adaptively refine B-spline resolution during training to improve accuracy and allow for direct model interpretability.
+                        </div>
+                        <div class="item-links">
+                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">03</div>
+                            <div class="item-title">AI-Maestro</div>
+                        </div>
+                        <div class="item-meta">Python, PyTorch, Audio Processing, VAE, MusicGen</div>
+                        <div class="item-description">
+                            Developed end-to-end Python/PyTorch system analyzing and fusing musical tracks through audio feature extraction, optimal transition strategies, and seamless bridge generation using heuristic, VAE-based latent interpolation, and MusicGen neural synthesis using Prompt Engineering. Built complete pipeline from audio feature extraction to mastering with CLI/web interfaces for deployment.
+                        </div>
+                        <div class="item-links">
+                            <a href="https://github.com/reg1um" class="item-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Section -->
+            <div class="content-section" id="posts-section">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>portfolio</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">posts/</span>
+                </div>
+                
+                <div class="section-header">
+                    <div class="section-icon">📝</div>
+                    <div class="section-title">Blog Posts</div>
+                    <div class="section-path">~/portfolio/posts/</div>
+                </div>
+                
+                <div class="content-grid" id="blog-container">
+                    <!-- Blog posts will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="content-section" id="contact-section">
+                <div class="breadcrumb">
+                    <span>~</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span>portfolio</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">contact.sh</span>
+                </div>
+                
+                <div class="section-header">
+                    <div class="section-icon">📧</div>
+                    <div class="section-title">Contact</div>
+                    <div class="section-path">~/portfolio/contact.sh</div>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-item focused">
+                        <div class="item-header">
+                            <div class="item-index">📧</div>
+                            <div class="item-title">Email</div>
+                        </div>
+                        <div class="item-description">arthurhm@outlook.fr</div>
+                        <div class="item-links">
+                            <a href="mailto:arthurhm@outlook.fr" class="item-link">Send Email</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🐙</div>
+                            <div class="item-title">GitHub</div>
+                        </div>
+                        <div class="item-description">github.com/reg1um</div>
+                        <div class="item-links">
+                            <a href="https://github.com/reg1um" class="item-link" target="_blank">View Profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">💼</div>
+                            <div class="item-title">LinkedIn</div>
+                        </div>
+                        <div class="item-description">linkedin.com/in/arthur-hamard</div>
+                        <div class="item-links">
+                            <a href="https://linkedin.com/in/arthur-hamard" class="item-link" target="_blank">Connect</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">📱</div>
+                            <div class="item-title">Phone</div>
+                        </div>
+                        <div class="item-description">+33 6 31 70 90 58</div>
+                        <div class="item-links">
+                            <a href="tel:+33631709058" class="item-link">Call</a>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item">
+                        <div class="item-header">
+                            <div class="item-index">🌍</div>
+                            <div class="item-title">Status</div>
+                        </div>
+                        <div class="item-description">Open to relocate to U.S Internships • Eligible for J-1 visa sponsorship</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <div class="status-item">Mode: <span id="current-mode">NORMAL</span></div>
+                <div class="status-item">Section: <span id="current-section">portfolio</span></div>
+                <div class="status-item">Items: <span id="item-count">5</span></div>
+            </div>
+            <div class="status-right">
+                <div class="status-item">Press <span>?</span> for help</div>
+            </div>
+        </div>
+
+        <!-- Command Line -->
+        <div class="command-line">
+            <span class="prompt">reg1um@portfolio:~$</span>
+            <input type="text" class="command-input" id="commandInput" placeholder="Type commands here... (:help for help)">
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script src="blog.js"></script>
